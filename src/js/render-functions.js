@@ -1,8 +1,10 @@
 import SimpleLightbox from 'simplelightbox';
 
-const refs = {
+export const refs = {
+  queryForm: document.querySelector('.form'),
   galleryList: document.querySelector('.gallery'),
   loaderElement: document.querySelector('.loader'),
+  loadMoreBtn: document.querySelector('.load-more'),
 };
 
 const lightbox = new SimpleLightbox('.gallery-link', {
@@ -31,7 +33,7 @@ function imagesTemplate(items) {
 }
 
 export function createGallery(images) {
-  refs.galleryList.innerHTML = imagesTemplate(images);
+  refs.galleryList.insertAdjacentHTML('beforeend', imagesTemplate(images));
   lightbox.refresh();
 }
 
@@ -45,4 +47,12 @@ export function showLoader() {
 
 export function hideLoader() {
   refs.loaderElement.classList.add('is-hidden');
+}
+
+export function showLoadMoreButton() {
+  refs.loadMoreBtn.classList.remove('is-hidden');
+}
+
+export function hideLoadMoreButton() {
+  refs.loadMoreBtn.classList.add('is-hidden');
 }
