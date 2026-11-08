@@ -36,7 +36,7 @@ main:has(.back-link) {
 
 .load-more {
   display: block;
-  margin: 24px auto 0;
+  margin: 32px auto 0;
   width: 125px;
   height: 40px;
   padding: 8px 16px;
